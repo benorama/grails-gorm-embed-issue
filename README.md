@@ -47,6 +47,7 @@ person.save()
 * update work address
 
 ```groovy
+person = Person.get(1)
 person.workAddress.code = 'C'
 person.save()
 ```
