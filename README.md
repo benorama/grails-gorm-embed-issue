@@ -63,4 +63,12 @@ It will still show code=**B**
 
 ## Workaround
 
-No workaround, rollback to Grails **3.2.3**.
+Wrap the call around a `withTransaction`
+
+```groovy
+Person.withTransaction {
+	person = Person.get(1)
+    person.workAddress.code = 'C'
+    person.save()
+}
+```
